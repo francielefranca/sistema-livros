@@ -10,5 +10,12 @@
 </head>
 <body>
     <h1>Genero</h1>
+    <h2>Cadastrar Gênero</h2>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Salvar</button>
+    </form>
+
 </body>
 </html>

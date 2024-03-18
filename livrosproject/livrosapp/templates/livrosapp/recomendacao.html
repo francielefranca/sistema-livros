@@ -1,0 +1,38 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recomendação de Leituras</title>
+</head>
+<body>
+    <h1>Recomendação de Leituras :)</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <label for="qtd_paginas">Quantidade de Páginas:</label>
+        <input type="number" name="qtd_paginas" required>
+        <br>
+        <br>
+        <label for="genero_id">Gênero Literário:</label>
+        <select name="genero_id">
+            {% for genero in generos %}
+                <option value="{{ genero.idgenero}}">{{ genero.nome }}</option>
+            {% endfor %}
+        </select>
+        <br>
+        <br>
+        <input type="submit" value="Buscar Livros">
+    </form>
+
+    {% if livros %}
+        <ul>
+            {% for livro in livros %}
+                <li>{{ livro.titulolivro }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+</body>
+</html>

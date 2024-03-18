@@ -10,5 +10,13 @@
 </head>
 <body>
     <h1>Sistema de Recomendação de Livros</h1>
+    <h2>Bem-vindo(a)!</h2>
+
+    <ul>
+        <li><a href="{% url 'livrosapp:recomendacao' %}">Solicitar Recomendação de Livro</a></li>
+        <li><a href="{% url 'livrosapp:avaliacao' %}">Avaliar Livro</a></li>
+        <li><a href="{% url 'livrosapp:livroscadastrados' %}">Livros Cadastrados</a></li>
+        <li><a href="{% url 'livrosapp:grupos' %}">Entrar ou Criar um Grupo</a></li>
+    </ul>
 </body>
 </html>

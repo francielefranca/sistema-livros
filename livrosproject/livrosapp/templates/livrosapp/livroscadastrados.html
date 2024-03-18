@@ -1,0 +1,21 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Livros Cadastrados</title>
+</head>
+<body>
+    <h1>Livros Cadastrados</h1>
+    <ul>
+        {% for livro in livros %}
+            <li>
+                <strong>Título:</strong> {{ livro.titulolivro }}<br>
+                <strong>Quantidade de Páginas:</strong> {{ livro.qtnpaginaslivro }}<br>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

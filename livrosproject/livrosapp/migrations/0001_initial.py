@@ -253,6 +253,7 @@ class Migration(migrations.Migration):
                 ('apelido', models.CharField(blank=True, max_length=150, null=True)),
                 ('leituras', models.TextField(blank=True, null=True)),
                 ('lider', models.IntegerField(blank=True, null=True)),
+                ('password', models.CharField(blank=True, max_length=150, null=True)),
             ],
             options={
                 'db_table': 'usuario',

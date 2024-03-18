@@ -5,14 +5,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro</title>
+    <title>Registro de Usuário</title>
 </head>
 <body>
     <h1>Registro de Usuário</h1>
-    <form action="register" method="POST">
+    <form action="{% url 'livrosapp:register' %}" method="POST">
         {% csrf_token %}
         {{ form.as_p }}
-        <input type="submit" value="Registrar">
+        <button type="submit">Registrar</button>
     </form>
 </body>
 </html>

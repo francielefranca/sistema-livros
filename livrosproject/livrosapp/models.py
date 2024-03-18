@@ -194,12 +194,6 @@ class Livros(models.Model):
     idgenerolivro = models.ForeignKey(Genero, models.DO_NOTHING, db_column='idgenerolivro', blank=True, null=True)
     idautorlivro = models.ForeignKey(Autor, models.DO_NOTHING, db_column='idautorlivro', blank=True, null=True)
     ideditoralivro = models.ForeignKey(Editora, models.DO_NOTHING, db_column='ideditoralivro', blank=True, null=True)
-    titulo = models.CharField(unique=True, max_length=150, blank=True, null=True)
-    qtnpaginas = models.IntegerField(blank=True, null=True)
-    datapublicacao = models.DateField(blank=True, null=True)
-    idgenero = models.IntegerField(blank=True, null=True)
-    idautor = models.IntegerField(blank=True, null=True)
-    ideditora = models.IntegerField(blank=True, null=True)
 
     class Meta:
         managed = False
@@ -233,7 +227,8 @@ class Usuario(models.Model):
     apelido = models.CharField(max_length=150, blank=True, null=True)
     leituras = models.TextField(blank=True, null=True)
     lider = models.IntegerField(blank=True, null=True)
-    idgenero = models.ForeignKey(Genero, models.DO_NOTHING, db_column='idgenero', blank=True, null=False)
+    idgenero = models.ForeignKey(Genero, models.DO_NOTHING, db_column='idgenero', blank=True, null=True)
+    password = models.CharField(max_length=100, blank=True, null=True)
 
     class Meta:
         managed = False

@@ -10,5 +10,28 @@
 </head>
 <body>
     <h1>Grupos</h1>
+    <h2>Criar ou Entrar em um Grupo de Leitura</h2>
+    <form method="POST">
+        {% csrf_token %}
+        <label for="nome_grupo">Nome do Grupo:</label>
+        <input type="text" name="nome_grupo" required>
+        <br>
+        <label for="genero_id">Gênero Literário:</label>
+        <select name="genero_id">
+            {% for genero in generos %}
+                <option value="{{ genero.idgenero }}">{{ genero.nome }}</option>
+            {% endfor %}
+        </select>
+        <br>
+        <input type="submit" value="Criar Grupo">
+    </form>
+
+    <h2>Grupos de Leitura Existentes:</h2>
+    <ul>
+        {% for grupo in grupos %}
+            <li><a href="{% url 'detalhes_grupo' grupo.idgrupo %}">{{ grupo.nome }}</a></li>
+        {% endfor %}
+    </ul>
+
 </body>
 </html>
